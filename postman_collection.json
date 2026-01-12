@@ -1,0 +1,40 @@
+{
+  "info": {
+    "name": "Accord-Innnovation API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "List books",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/books",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api","books"]
+        }
+      }
+    },
+    {
+      "name": "Create book",
+      "request": {
+        "method": "POST",
+        "header": [
+          {"key":"Content-Type","value":"application/json"}
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"New Book\",\n  \"isbn\": \"ISBN-999\",\n  \"author\": { \"name\": \"New Author\" }\n}"
+        },
+        "url": {"raw":"http://localhost:8080/api/books","protocol":"http","host":["localhost"],"port":"8080","path":["api","books"]}
+      }
+    },
+    {
+      "name": "Search by author",
+      "request": {"method":"GET","url":{"raw":"http://localhost:8080/api/books/search?author=Alice","protocol":"http","host":["localhost"],"port":"8080","path":["api","books","search"],"query":[{"key":"author","value":"John Elia"}]}}
+    }
+  ]
+}
